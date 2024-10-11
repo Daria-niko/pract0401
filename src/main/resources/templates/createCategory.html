@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создать категорию</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+<header>
+    <h1>Создать категорию</h1>
+    <nav>
+        <a href="/categories" class="btn btn-primary">Назад к списку</a>
+    </nav>
+</header>
+<main>
+    <form action="/categories" method="post">
+        <div>
+            <label for="name">Название категории:</label>
+            <input type="text" id="name" name="name" th:value="${category.name}" required>
+        </div>
+        <div>
+            <button type="submit" class="btn btn-primary">Создать</button>
+        </div>
+    </form>
+</main>
+</body>
+</html>

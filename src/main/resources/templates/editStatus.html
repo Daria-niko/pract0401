@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Редактировать Статус</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container mt-5">
+    <h1>Редактировать Статус</h1>
+    <form th:action="@{/statuses/edit/{id}(id=${status.id})}" th:object="${status}" method="post">
+        <div class="form-group">
+            <label for="name">Название Статуса</label>
+            <input type="text" class="form-control" id="name" th:field="*{name}" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Обновить</button>
+        <a href="/statuses" class="btn btn-secondary">Отмена</a>
+    </form>
+</div>
+</body>
+</html>

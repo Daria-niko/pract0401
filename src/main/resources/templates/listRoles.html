@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Роли</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/roles/roles.css">
+</head>
+<body>
+<header>
+    <h1>Управление ролями</h1>
+    <nav>
+        <a href="/" class="btn btn-primary">Вернуться на главную</a>
+    </nav>
+</header>
+<main>
+    <a href="/roles/create" class="btn btn-primary">Добавить роль</a>
+    <table>
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Название</th>
+            <th>Удалено</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- Здесь будет генерироваться список ролей с помощью Thymeleaf -->
+        <tr th:each="role : ${roles}">
+            <td th:text="${role.id}"></td>
+            <td th:text="${role.name}"></td>
+            <td>
+                <a th:href="@{/roles/edit/{id}(id=${role.id})}" class="btn btn-edit">Редактировать</a>
+                <a th:href="@{/roles/delete/{id}(id=${role.id})}" class="btn btn-delete" onclick="return confirm('Вы уверены, что хотите удалить эту роль?');">Удалить физически</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</main>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Создание новой роли</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="/css/roles/roles.css">
+</head>
+<body>
+<header>
+    <h1>Создание новой роли</h1>
+    <nav>
+        <a href="/roles" class="btn btn-secondary">Вернуться к списку ролей</a>
+    </nav>
+</header>
+<main>
+    <form action="/roles" method="post">
+        <div class="form-group">
+            <label for="name">Название роли:</label>
+            <input type="text" id="name" name="name" class="form-control" maxlength="13" required>
+        </div>
+        <div class="form-group">
+            <label for="deleted">Удалено:</label>
+            <select id="deleted" name="deleted" class="form-control">
+                <option value="false">Нет</option>
+                <option value="true">Да</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Создать роль</button>
+    </form>
+</main>
+</body>
+</html>
